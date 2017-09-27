@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlogEngine3.0</title>
+	</head>
+	<body>
+		<h2>edit post</h2>
+		<form action="/update_post" method="POST">
+			New title? <input type="text" name="title" value="{{ post.title }}"><br>
+			New content? <br><textarea style="width: 125px; height: 125px" value="{{ post.title }}"></textarea><br><br>
+			Done editing? <button type="submit">Update</button>
+		</form>
+	</body>
+</html>

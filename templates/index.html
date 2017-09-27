@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlogEngine3.0</title>
+	</head>
+	<body>
+		{% if posts %}
+			<h2>Showing all posts</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Published</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for each_post in posts %}
+						<tr>
+							<td>{{ each_post.title }}</td>
+							<td>{{ each_post.published }}</td>
+							<td><a href="/show_post/{{ each_post.title }}">show</a></td>
+							<td><a href="/edit_post/{{ each_post.title }}">edit</a></td>
+							<td><a href="/delete_post/{{ each_post.title }}">delete</a></td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<h2>No posts yet</h2>
+		{% endif %}
+		<a href="/new_post">New post</a>
+	</body>
+</html>
